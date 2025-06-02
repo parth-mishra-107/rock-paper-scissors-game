@@ -1,81 +1,65 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Rock Paper Scissors</title>
-    
-    <body>
-        <p>Rock Paper Scissors</p>
-        <button onclick="
-        let randn = Math.random();
-        let comp='';
-        let result='';
+<head>
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <p>Rock Paper Scissors</p>
 
-        if(randn>=0 && randn < 1/3) {
-            comp ='Rock';
-        }else if (randn >= 1/3 && randn < 2/3) {
-            comp ='Paper';
-        }else if (randn<1) {
-            comp ='Scissors';
-        }
-            if(comp === 'Rock'){
-                result='Tie';
-            }else if( comp ==='Paper'){
-                result='You Lose';
-            }else if(comp==='Scissors'){
-                result='You Win';
+    <button onclick="playGame('Rock')">Rock</button>
+    <button onclick="playGame('Paper')">Paper</button>
+    <button onclick="playGame('Scissors')">Scissors</button>
+
+    <script>
+        function playGame(playerMove) {
+            let comp = computerMove();
+            let result = '';
+
+            if (playerMove === 'Scissors') {
+                if (comp === 'Rock') {
+                    result = 'You Lose';
+                } else if (comp === 'Paper') {
+                    result = 'You Win';
+                } else {
+                    result = 'Tie';
+                }
+
+            } else if (playerMove === 'Paper') {
+                if (comp === 'Rock') {
+                    result = 'You Win';
+                } else if (comp === 'Paper') {
+                    result = 'Tie';
+                } else {
+                    result = 'You Lose';
+                }
+
+            } else if (playerMove === 'Rock') {
+                if (comp === 'Rock') {
+                    result = 'Tie';
+                } else if (comp === 'Paper') {
+                    result = 'You Lose';
+                } else {
+                    result = 'You Win';
+                }
             }
 
-            alert(`You picked Rock. Computer picked ${comp}. Result: ${result}`);
-        ">Rock</button>
-
-        <button onclick="
-        let randn = Math.random();
-        let comp='';
-        let result='';
-
-        if(randn>=0 && randn < 1/3) {
-            comp ='Rock';
-        }else if (randn >= 1/3 && randn < 2/3) {
-            comp ='Paper';
-        }else if (randn<1) {
-            comp ='Scissors';
+            alert(`You picked ${playerMove}. Computer picked ${comp}. Result: ${result}`);
         }
-            if(comp === 'Rock'){
-                result='You win';
-            }else if( comp ==='Paper'){
-                result='Tie';
-            }else if(comp==='Scissors'){
-                result='You Lose';
+
+        function computerMove() {
+            let randn = Math.random();
+            let comp = '';
+
+            if (randn < 1/3) {
+                comp = 'Rock';
+            } else if (randn < 2/3) {
+                comp = 'Paper';
+            } else {
+                comp = 'Scissors';
             }
 
-            alert(`You picked Paper. Computer picked ${comp}. Result: ${result}`);
-            ">Paper</button>
-
-        <button onclick="
-        let randn = Math.random();
-        let comp ='';
-        let result='';
-
-        if(randn>=0 && randn < 1/3) {
-            comp ='Rock';
-        }else if (randn >= 1/3 && randn < 2/3) {
-            comp ='Paper';
-        }else if (randn<1) {
-            comp ='Scissors';
+            return comp;
         }
-            if(comp === 'Rock'){
-                result='You Lose';
-            }else if( comp ==='Paper'){
-                result='You Win';
-            }else if(comp==='Scissors'){
-                result='Tie';
-            }
-
-            alert(`You picked Scissors. Computer picked ${comp}. Result: ${result}`);
-            ">Scissors</button>
-
-        <script>
-
-        </script>
-    </body>
+    </script>
+</body>
 </html>
