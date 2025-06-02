@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>
+    
+    <body>
+        <p>Rock Paper Scissors</p>
+        <button onclick="
+        let randn = Math.random();
+        let comp='';
+        let result='';
+
+        if(randn>=0 && randn < 1/3) {
+            comp ='Rock';
+        }else if (randn >= 1/3 && randn < 2/3) {
+            comp ='Paper';
+        }else if (randn<1) {
+            comp ='Scissors';
+        }
+            if(comp === 'Rock'){
+                result='Tie';
+            }else if( comp ==='Paper'){
+                result='You Lose';
+            }else if(comp==='Scissors'){
+                result='You Win';
+            }
+
+            alert(`You picked Rock. Computer picked ${comp}. Result: ${result}`);
+        ">Rock</button>
+
+        <button onclick="
+        let randn = Math.random();
+        let comp='';
+        let result='';
+
+        if(randn>=0 && randn < 1/3) {
+            comp ='Rock';
+        }else if (randn >= 1/3 && randn < 2/3) {
+            comp ='Paper';
+        }else if (randn<1) {
+            comp ='Scissors';
+        }
+            if(comp === 'Rock'){
+                result='You win';
+            }else if( comp ==='Paper'){
+                result='Tie';
+            }else if(comp==='Scissors'){
+                result='You Lose';
+            }
+
+            alert(`You picked Paper. Computer picked ${comp}. Result: ${result}`);
+            ">Paper</button>
+
+        <button onclick="
+        let randn = Math.random();
+        let comp ='';
+        let result='';
+
+        if(randn>=0 && randn < 1/3) {
+            comp ='Rock';
+        }else if (randn >= 1/3 && randn < 2/3) {
+            comp ='Paper';
+        }else if (randn<1) {
+            comp ='Scissors';
+        }
+            if(comp === 'Rock'){
+                result='You Lose';
+            }else if( comp ==='Paper'){
+                result='You Win';
+            }else if(comp==='Scissors'){
+                result='Tie';
+            }
+
+            alert(`You picked Scissors. Computer picked ${comp}. Result: ${result}`);
+            ">Scissors</button>
+
+        <script>
+
+        </script>
+    </body>
+</html>
